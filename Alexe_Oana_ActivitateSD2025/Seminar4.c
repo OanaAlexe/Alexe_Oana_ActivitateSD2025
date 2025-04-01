@@ -56,8 +56,8 @@
 //}
 //
 //void afisareListaMasini(Nod* cap) {
-//	//afiseaza toate elemente de tip masina din lista simplu inlantuita
-//	//prin apelarea functiei afisareMasina()
+//	afiseaza toate elemente de tip masina din lista simplu inlantuita
+//	prin apelarea functiei afisareMasina()
 //	while (cap)
 //	{
 //		afisareMasina(cap->info);
@@ -136,9 +136,42 @@
 //	return (count > 0) ? sum / count : 0;
 //}
 //
-//void stergeMasiniDinSeria(/*lista masini*/ char serieCautata) {
+//void stergeMasiniDinSeria(Nod** cap, char serieCautata) {
 //	//sterge toate masinile din lista care au seria primita ca parametru.
 //	//tratati situatia ca masina se afla si pe prima pozitie, si pe ultima pozitie
+//	while ((*cap) && (*cap)->info.serie == serieCautata) {
+//		Nod* aux = *cap;
+//		*cap = aux->urmator;
+//		if (aux->info.numeSofer) {
+//			free(aux->info.numeSofer);
+//		}
+//		if (aux->info.model) {
+//			free(aux->info.model);
+//		}
+//		free(aux);
+//	}
+//	if ((*cap)) {
+//		Nod* p = *cap;
+//		while (p) {
+//			while (p->urmator && p->urmator->info.serie != serieCautata) {
+//				p = p->urmator;
+//			}
+//			if (p->urmator) {
+//				Nod* aux = *cap;
+//				*cap = aux->urmator;
+//				if (aux->info.numeSofer) {
+//					free(aux->info.numeSofer);
+//				}
+//				if (aux->info.model) {
+//					free(aux->info.model);
+//				}
+//				free(aux);
+//			}
+//			else {
+//				p = NULL;
+//			}
+//		}
+//	}
 //}
 //
 //float calculeazaPretulMasinilorUnuiSofer(Nod* lista, const char* numeSofer) {
@@ -182,7 +215,12 @@
 //	afisareListaMasini(cap);
 //	printf("%f", calculeazaPretMediu(cap));
 //	printf("%f", calculeazaPretulMasinilorUnuiSofer(cap, "Ionescu"));
+//	printf("Sterge seria A\/");
+//	stergeMasiniDinSeria(&cap, 'A');
+//	afisareListaMasini(cap);
+//	stergeMasiniDinSeria(&cap, 'B');
+//	afisareListaMasini(cap);
 //	dezalocareListaMasini(&cap);
 //
 //	return 0;
-//}
+// }
