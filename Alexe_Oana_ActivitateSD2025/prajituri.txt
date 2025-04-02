@@ -1,0 +1,10 @@
+1,tort,190,1200,ciocolata,1
+2,tarte,3,10,portocale,10
+3,amandina,4.5,16,ciocolata,2
+4,eclair,5.5,20,ciocolata si vanilie,2
+5,prajitura,40,100,mere,1
+6,cheesecake,12,45,potorcale,6
+7,tiramisu,38,100,cafea,1
+8,savarine,3,15,rom si frisca,6
+9,diplomat,4,14,fructe,4
+10,napolitane,1.4,10,lamaie,30
