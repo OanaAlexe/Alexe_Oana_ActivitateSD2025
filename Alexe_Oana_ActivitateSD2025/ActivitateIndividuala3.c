@@ -28,14 +28,14 @@
 //	 	aux = strtok(buffer, sep);
 //	 	p1.id = atoi(aux);
 //	 	aux = strtok(NULL, sep);
-//	 	p1.nume = malloc(strlen(aux) + 1);
+//	 	p1.nume = (char*)malloc(strlen(aux) + 1);
 //	 	strcpy_s(p1.nume, strlen(aux) + 1, aux);
 //	 	aux = strtok(NULL, sep);
 //	 	p1.pret = atof(aux);
 //	 	aux = strtok(NULL, sep);
 //	 	p1.greutate = atof(aux);
 //	 	aux=strtok(NULL, sep);
-//	 	p1.aroma = malloc(strlen(aux) + 1);
+//	 	p1.aroma = (char*)malloc(strlen(aux) + 1);
 //	 	strcpy_s(p1.aroma, strlen(aux) + 1, aux);
 //	 	aux = strtok(NULL, sep);
 //	 	p1.nrFelii = atoi(aux);
@@ -175,7 +175,7 @@
 //		if ((*cap)) {
 //			Nod* p = *cap;
 //			while (p) {
-//				while (p->urm && p->urm->info.nrFelii==nrFeliiCautate) {
+//				while (p->urm && p->urm->info.nrFelii!=nrFeliiCautate) {
 //					p = p->urm;
 //				}
 //				if (p->urm) {
